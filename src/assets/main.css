@@ -1,0 +1,44 @@
+/* main.css */
+
+/* Definir a fonte globalmente para todo o projeto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #F5F5F5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', sans-serif;
+}
+
+p,
+ul,
+ol,
+li {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-family: 'Roboto', sans-serif;
+}
+
+input,
+textarea {
+  font-family: 'Roboto', sans-serif;
+
+}

@@ -27,11 +27,6 @@ import logo from "@/assets/Pokedex.webp";
   width: 100%;
   padding: 1rem;
   background-color: #e51c23;
-
-
-
-
-
 }
 
 

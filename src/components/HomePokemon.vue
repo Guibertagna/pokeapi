@@ -1,4 +1,5 @@
 <script setup>
+import router from "@/router";
 import { usePokeomnStore } from "@/stores/pokeStore";
 import { onMounted, ref, computed } from "vue";
 
@@ -10,6 +11,11 @@ const selectedTab = ref('first');
 const first = ref ([])
 const second = ref([])
 const third = ref([])
+function goToDetails (id){
+  router.push(`/details/${id}`)
+} 
+
+
 
 
 onMounted(async () => {
@@ -53,26 +59,26 @@ onMounted(async () => {
     </div>
 
     <div class="poke-list" v-if="selectedTab === 'first'">
-      <div class="poke-card" v-for="poke in first" :key="poke.id">
-        <img :src="poke.image" class="poke-img"/>
-        <h3>Pokedex number #{{ poke.id }}</h3>
-        <h3 class="poke-name">{{ poke.name }}</h3>
+      <div class="poke-card" v-for="poke in first" :key="poke.id" @click="goToDetails(poke.id)">
+        <img :src="poke.image" class="poke-img" />
+    <h3 class="poke-id">#{{ poke.id }}</h3>
+    <h3 class="poke-name">{{ poke.name }}</h3>
       </div>
     </div>
-
     <div class="poke-list" v-if="selectedTab === 'second'">
-      <div class="poke-card" v-for="poke in second" :key="poke.id">
-        <img :src="poke.image" class="poke-img"/>
-        <h3>Pokedex number #{{ poke.id }}</h3>
-        <h3 class="poke-name">{{ poke.name }}</h3>
-      </div>
-    </div>
+  <div class="poke-card" v-for="poke in second" :key="poke.id" @click="goToDetails(poke.id)">
+    <img :src="poke.image" class="poke-img" />
+    <h3 class="poke-id">#{{ poke.id }}</h3>
+    <h3 class="poke-name">{{ poke.name }}</h3>
+
+  </div>
+</div>
 
     <div class="poke-list" v-if="selectedTab === 'third'">
-      <div class="poke-card" v-for="poke in third" :key="poke.id">
-        <img :src="poke.image" class="poke-img"/>
-        <h3>Pokedex number #{{ poke.id }}</h3>
-        <h3 class="poke-name">{{ poke.name }}</h3>
+      <div class="poke-card" v-for="poke in third" :key="poke.id" @click="goToDetails(poke.id)">
+        <img :src="poke.image" class="poke-img" />
+    <h3 class="poke-id">#{{ poke.id }}</h3>
+    <h3 class="poke-name">{{ poke.name }}</h3>
       </div>
     </div>
   </div>
@@ -100,31 +106,53 @@ onMounted(async () => {
   border-radius: 5px;
   font-size: 16px;
 }
+.poke-card {
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    width: 200px;
+    height: 250px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poke-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.poke-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.poke-id {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.poke-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-transform: capitalize;
+}
 
 .poke-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
     justify-items: center;
     width: 100%;
     max-width: 1200px;
     padding: 1rem;
 }
 
-.poke-card {
-    border: solid 1px black;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 200px;
-    height:230px;
-
-}
-
-.poke-name {
-    margin-top: 10px;
-}
 .tabs {
     display: flex;
     justify-content: center;

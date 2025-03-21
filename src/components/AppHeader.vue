@@ -1,6 +1,4 @@
 <template>
- 
-    <!-- Pokedex Header -->
     <div class="pokedex-header">
       <div class="pokeball-light"></div>
      

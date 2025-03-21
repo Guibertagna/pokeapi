@@ -4,7 +4,6 @@
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet"
       />
-   
       <router-link to="/" class="back-button">
         <span class="material-icons">arrow_back</span>
       </router-link>
@@ -53,9 +52,9 @@
     <div v-else class="loading-container">
       <div class="loading"></div>
       <div class="loading">
-        <img src= "../assets/gifPoke.gif"  alt="Carregando..." class="loading-gif" >
+        <img src= "../assets/gifPoke.gif"  alt="loading..." class="loading-gif" >
       </div>
-      <p>Carregando Pokémon...</p>
+      <p>loading Pokémon...</p>
     </div>
   </template>
   <script setup>
@@ -115,9 +114,9 @@ function getMainTypeClass(type) {
  font-size: 30px;
 }
 .loading-gif {
-  width: 50px;  /* Ajuste o tamanho do GIF conforme necessário */
-  height: 50px; /* Ajuste o tamanho do GIF conforme necessário */
-  margin-bottom: 10px;  /* Espaço entre o GIF e o texto */
+  width: 50px; 
+  height: 50px; 
+  margin-bottom: 10px;  
 }
 .pokemon-name {
   font-size: 36px;
@@ -146,16 +145,13 @@ function getMainTypeClass(type) {
   display: flex;
   justify-content: center;
   margin-top: -60px;
-  position: relative;
   z-index: 2;
 }
 
 .pokemon-image {
   width: 200px;
   height: 200px;
-
-  
-    margin-top: 50px;
+  margin-top: 50px;
   transition: transform 0.3s ease;
 }
 .pokemon-image:hover {
@@ -170,8 +166,6 @@ function getMainTypeClass(type) {
   font-size: 20px;
   margin: 0 0 15px;
   color: #333;
-  font-weight: 600;
-  position: relative;
   padding-bottom: 8px;
 }
 

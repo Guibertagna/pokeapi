@@ -29,7 +29,7 @@
   </script>
   
   <style scoped>
-  /* Footer elegante e organizado */
+
   .footer {
     display: flex;
     flex-direction: column;
@@ -82,7 +82,7 @@
   
   .social-link {
     color: #fff;
-    font-size: 24px; /* Aumentando o tamanho dos ícones */
+    font-size: 24px;
     transition: color 0.3s ease, transform 0.2s ease;
   }
   

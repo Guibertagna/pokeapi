@@ -1,6 +1,16 @@
 <template>
+    <div class="back">
+      <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet"
+      />
+   
+      <router-link to="/" class="back-button">
+        <span class="material-icons">arrow_back</span>
+      </router-link>
+    </div>
 <div v-if="!loading && pokestore.uniquePokemon" class="pokemon-detail"> 
-      <div class="pokemon-card">
+    <div class="pokemon-card">
         <div class="pokemon-header" :class="getMainTypeClass(pokestore.uniquePokemon.types[0])">
           <div class="pokemon-id">#{{ pokestore.uniquePokemon.id }}</div>
           <h1 class="pokemon-name">{{ pokestore.uniquePokemon.name }}</h1>
@@ -184,6 +194,11 @@ function getMainTypeClass(type) {
   font-size: 14px;
   text-transform: capitalize;
   color: #333;
+}
+.back {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%; 
 }
 .type-normal { background-color: #A8A77A; }
 .type-fire { background-color: #EE8130; }
